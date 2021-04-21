@@ -1,0 +1,109 @@
+<html>
+<head>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            background-color: lightseagreen;
+        }
+        .w{
+            position: absolute;
+            top: 30%;
+            left: 30%;
+            height: 350px;
+            width: 650px;
+            border: 5px solid black;
+            background-color: black;
+            color: lightgreen;
+            border-radius: 15px 15px 15px;
+            box-shadow: 5px 5px 5px white;
+           
+        }
+        h3{
+            color: lightseagreen;
+            color: lightseagreen;
+            position: absolute;
+            font-size: 30px;
+            position: absolute;
+            top: 30%;
+            left: 10%;
+        }
+        .app{
+            position: absolute;
+            right: 10%;
+            top: 20%;
+            background-color: white;
+            color: black;
+            border-spacing: 5px 5px;            
+        }
+        #sd{
+            position: absolute;
+            top: 65%;
+            left: 43%;
+            background-color: lightseagreen;
+            border-radius: 5% 5% 5% 5%;
+        }
+    </style>
+    <body>
+       
+    <div class="w">
+         <h3>STUDENT <br>GRADE
+             <br>  CALCY
+        
+        </h3>
+        <div class="app">
+            <div class="afg">
+        <input type="text" class="afc" placeholder="Maths"  id="m">
+        </div>
+             <div class="afg">
+        <input type="text" class="afc" placeholder="Physics" id="phy">
+        </div> <div class="afg">
+        <input type="text" class="afc" placeholder="Computer" id="c">
+        </div> <div class="afg">
+        <input type="text" class="afc" placeholder="Electronics" id="e">
+        </div> <div class="afg">
+        <input type="text" class="afc" placeholder="Programming" id="p">
+            <div>
+            <input type="button" name="" value="Show Result" onclick="mf()" style="width: 100%" class="afb">
+            </div>
+        </div>
+        </div>
+        </div>
+        <div class="showdata">
+        <p id="sd"> </p>
+        </div>
+    </body>
+    <script>
+    const mf=()=>{
+        let m=document.getElementById('m').value;
+        let phy=document.getElementById('phy').value;
+        let c=document.getElementById('c').value;
+        let e=document.getElementById('e').value;
+        let p=document.getElementById('p').value;
+        console.log(m);
+        let totalgrades = parseFloat(m) + parseFloat(phy) + parseFloat(c) + parseFloat(e) + parseFloat(p);
+        
+        let perc = (totalgrades/5);
+       
+         if(perc <= 100 && perc >=80){
+            grade='A';
+        }
+        else if(perc <=79 && perc>=60)
+            {
+                grade = 'B';
+            }
+        else if(perc <=59 && perc>=40)
+            {
+                grade = 'C';
+            }
+        if(perc >=39.5){
+        document.getElementById('sd').innerHTML=`Out of 500 your total is ${totalgrades} and your percentage is ${perc}%. <br> your grade is ${grade} you are pass`
+        }
+        else{
+        document.getElementById('sd').innerHTML=`Out of 500 your total is ${totalgrades} and your percentage is ${perc}%. <br> your grade is ${grade} you are fail`
+        }
+        
+    }
+    </script>
+    </head>
+</html>
